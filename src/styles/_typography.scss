@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@mixin typography($type, $size, $weight) {
+  // Type Display
+  @if $type == 'display' and $size == '2xs' {
+    font-family: $ff-display;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    @if $weight == 'regular' {
+      font-weight: 400;
+    }
+  }
+
+  @if $type == 'display' and $size == 'xs' {
+    font-family: $ff-display;
+    font-size: 1.5rem;
+    line-height: 2rem;
+
+    @if $weight == 'bold' {
+      font-weight: 700;
+    }
+  }
+
+  @if $type == 'display' and $size == 'sm' {
+    font-family: $ff-display;
+    font-size: 1.875rem;
+    line-height: 2.375rem;
+
+    @if $weight == 'bold' {
+      font-weight: 700;
+    }
+  }
+
+  @if $type == 'display' and $size == 'md' {
+    font-family: $ff-display;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+
+    @if $weight == 'bold' {
+      font-weight: 700;
+    }
+  }
+
+  // Type Text
+  @if $type == 'text' and $size == '2xs' {
+    font-family: $ff-text;
+    font-size: 0.625rem;
+
+    @if $weight == 'regular' {
+      font-weight: 400;
+    }
+
+    @if $weight == 'medium' {
+      font-weight: 500;
+    }
+  }
+
+  @if $type == 'text' and $size == 'xs' {
+    font-family: $ff-text;
+    font-size: 0.75rem;
+
+    @if $weight == 'regular' {
+      font-weight: 400;
+    }
+
+    @if $weight == 'medium' {
+      font-weight: 500;
+    }
+  }
+
+  @if $type == 'text' and $size == 'sm' {
+    font-family: $ff-text;
+    font-size: 0.875rem;
+
+    @if $weight == 'regular' {
+      font-weight: 400;
+    }
+
+    @if $weight == 'medium' {
+      font-weight: 500;
+    }
+
+    @if $weight == 'bold' {
+      font-weight: 700;
+    }
+  }
+
+  @if $type == 'text' and $size == 'md' {
+    font-family: $ff-text;
+    font-size: 1rem;
+
+    @if $weight == 'regular' {
+      font-weight: 400;
+    }
+
+    @if $weight == 'medium' {
+      font-weight: 500;
+    }
+  }
+}
