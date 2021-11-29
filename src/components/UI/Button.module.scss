@@ -1,0 +1,18 @@
+@import '../../styles/index.scss';
+
+.button {
+  @include typography('text', 'md', 'medium');
+  color: $clr-gray-25;
+  background-color: $clr-accent-4;
+  display: inline-block;
+  width: 100%;
+  padding: $gap-10 $gap-18;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
