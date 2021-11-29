@@ -1,0 +1,10 @@
+@import '../../styles/index.scss';
+
+.container {
+  display: flex;
+  gap: $gap-8;
+}
+
+.text {
+  @include typography('text', 'sm', 'medium');
+}
