@@ -1,0 +1,7 @@
+@import '../../styles/index.scss';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-20;
+}
