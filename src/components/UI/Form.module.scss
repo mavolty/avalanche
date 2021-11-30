@@ -1,7 +1,16 @@
 @import '../../styles/index.scss';
 
-.form {
+%flex {
   display: flex;
   flex-direction: column;
+}
+
+.form {
+  @extend %flex;
+  gap: $gap-24;
+}
+
+.field {
+  @extend %flex;
   gap: $gap-20;
 }
