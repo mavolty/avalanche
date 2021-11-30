@@ -1,27 +1,24 @@
 import Input from './Input';
 import styles from './Form.module.scss';
 
-function Form({ submitHandler }) {
+function Form({ submitHandler, inputs, children }) {
+  const input = inputs?.map(input => (
+    <Input
+      key={input.id}
+      label={input.label}
+      input={{
+        type: input.type,
+        id: input.id,
+        name: input.name,
+        placeholder: input.placeholder,
+        autoComplete: input.autoComplete,
+      }}
+    />
+  ));
   return (
     <form onSubmit={submitHandler} className={styles.form}>
-      <Input
-        label="Name"
-        input={{
-          type: 'text',
-          id: 'name',
-          name: 'name',
-          placeholder: 'Enter your name',
-        }}
-      />
-      <Input
-        label="Email"
-        input={{
-          type: 'email',
-          id: 'email',
-          name: 'email',
-          placeholder: 'Enter your email',
-        }}
-      />
+      {inputs && <div className={styles.field}>{input}</div>}
+      {children}
     </form>
   );
 }
