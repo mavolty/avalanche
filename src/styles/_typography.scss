@@ -41,6 +41,16 @@
     }
   }
 
+  @if $type == 'display' and $size == 'lg' {
+    font-family: $ff-display;
+    font-size: 2.5rem;
+    line-height: 3rem;
+
+    @if $weight == 'bold' {
+      font-weight: 700;
+    }
+  }
+
   // Type Text
   @if $type == 'text' and $size == '2xs' {
     font-family: $ff-text;
@@ -52,6 +62,10 @@
 
     @if $weight == 'medium' {
       font-weight: 500;
+    }
+
+    @if $weight == 'bold' {
+      font-weight: 700;
     }
   }
 
@@ -65,6 +79,10 @@
 
     @if $weight == 'medium' {
       font-weight: 500;
+    }
+
+    @if $weight == 'bold' {
+      font-weight: 700;
     }
   }
 
@@ -95,6 +113,112 @@
 
     @if $weight == 'medium' {
       font-weight: 500;
+    }
+
+    @if $weight == 'bold' {
+      font-weight: 700;
+    }
+  }
+
+  @if $type == 'text' and $size == 'lg' {
+    font-family: $ff-text;
+    font-size: 1.125rem;
+
+    @if $weight == 'regular' {
+      font-weight: 400;
+    }
+
+    @if $weight == 'medium' {
+      font-weight: 500;
+    }
+
+    @if $weight == 'bold' {
+      font-weight: 700;
+    }
+  }
+
+  @if $type == 'text' and $size == 'xl' {
+    font-family: $ff-text;
+    font-size: 1.25rem;
+
+    @if $weight == 'regular' {
+      font-weight: 400;
+    }
+
+    @if $weight == 'medium' {
+      font-weight: 500;
+    }
+
+    @if $weight == 'bold' {
+      font-weight: 700;
+    }
+  }
+
+  @if $type == 'text' and $size == '2xl' {
+    font-family: $ff-text;
+    font-size: 1.5rem;
+
+    @if $weight == 'regular' {
+      font-weight: 400;
+    }
+
+    @if $weight == 'medium' {
+      font-weight: 500;
+    }
+
+    @if $weight == 'bold' {
+      font-weight: 700;
+    }
+  }
+
+  @if $type == 'text' and $size == '3xl' {
+    font-family: $ff-text;
+    font-size: 1.875rem;
+
+    @if $weight == 'regular' {
+      font-weight: 400;
+    }
+
+    @if $weight == 'medium' {
+      font-weight: 500;
+    }
+
+    @if $weight == 'bold' {
+      font-weight: 700;
+    }
+  }
+
+  @if $type == 'text' and $size == '4xl' {
+    font-family: $ff-text;
+    font-size: 2.25rem;
+
+    @if $weight == 'regular' {
+      font-weight: 400;
+    }
+
+    @if $weight == 'medium' {
+      font-weight: 500;
+    }
+
+    @if $weight == 'bold' {
+      font-weight: 700;
+    }
+  }
+
+  @if $type == 'text' and $size == '5xl' {
+    font-family: $ff-text;
+    font-size: 3rem;
+
+    @if $weight == 'regular' {
+      font-weight: 400;
+    }
+
+    @if $weight == 'medium' {
+      font-weight: 500;
+    }
+
+    @if $weight == 'bold' {
+      font-weight: 700;
     }
   }
 }
