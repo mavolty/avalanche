@@ -12,11 +12,17 @@ $clr-accent-1: #fff6ed;
 $clr-accent-2: #f0e7da;
 $clr-accent-3: #efe2d9;
 $clr-accent-4: #ffead5;
-$clr-accent-5: #472723;
+$clr-accent-5: #6f4b46;
+$clr-accent-6: #472723;
 
 $clr-gray-25: #fcfcfd;
+$clr-gray-50: #f9fafb;
+$clr-gray-100: #f2f4f7;
+$clr-gray-200: #e4e7ec;
 $clr-gray-300: #d0d5dd;
+$clr-gray-400: #98a2b3;
 $clr-gray-500: #667085;
+$clr-gray-600: #475467;
 $clr-gray-700: #344054;
 $clr-gray-800: #1d2939;
 $clr-gray-900: #101828;
@@ -40,3 +46,22 @@ $gap-18: 1.125rem;
 $gap-20: 1.25rem;
 $gap-24: 1.5rem;
 $gap-32: 2rem;
+$gap-48: 3rem;
+
+$shadow-xs: 0 1px 2px hsla(220, 43%, 11%, 0.05);
+$shadow-sm: 0 1px 3px hsla(220, 43%, 11%, 0.1) 0 1px 2px
+  hsla(220, 43%, 11%, 0.06);
+$shadow-md: 0px 4px 8px -2px hsla(220, 43%, 11%, 0.1),
+  0px 2px 4px -2px hsla(220, 43%, 11%, 0.06);
+$shadow-lg: 0px 12px 16px -4px hsla(220, 43%, 11%, 0.1),
+  0px 4px 6px -2px hsla(220, 43%, 11%, 0.05);
+
+$focused-primary: 0 0 0 4px $clr-accent-4;
+$focused-gray: 0 0 0 4px $clr-gray-100;
+
+$shadow-xs-focused-primary: $shadow-xs, $focused-primary;
+$shadow-xs-focused-gray: $shadow-xs, $focused-gray;
+$shadow-sm-focused-primary: $shadow-sm, $focused-primary;
+$shadow-sm-focused-gray: $shadow-sm, $focused-gray;
+
+$transition-primary: all 0.2s ease-in-out;
