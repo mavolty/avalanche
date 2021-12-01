@@ -1,0 +1,19 @@
+@import './variables.scss';
+
+@mixin iconPathColor {
+  .primary path {
+    stroke: $clr-accent-5;
+  }
+
+  .gray path {
+    stroke: $clr-gray-500;
+  }
+
+  .success path {
+    stroke: $clr-success-600;
+  }
+
+  .error path {
+    stroke: $clr-error-600;
+  }
+}
