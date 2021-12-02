@@ -1,18 +1,167 @@
-@import '../../styles/index.scss';
+@import '../../styles/variables.scss';
+@import '../../styles/typography.scss';
 
-.button {
-  @include typography('text', 'md', 'medium');
-  color: $clr-gray-25;
-  background-color: $clr-accent-4;
+
+// ==========
+// Extends
+// ==========
+
+%reset-link {
+  text-decoration: none;
+}
+
+%default {
   display: inline-block;
-  width: 100%;
-  padding: $gap-10 $gap-18;
-  border: none;
-  border-radius: 0.5rem;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: $transition-primary;
+}
+
+%default:focus {
+  outline: 4px solid $clr-gray-300;
+}
+
+%default-button {
+  text-align: center;
+  border-radius: 0.5rem;
+  box-shadow: $shadow-xs;
+}
+
+%default-primary {
+  @extend %default-button;
+  color: $clr-white;
+  background-color: $clr-accent-5;
 
   &:hover {
-    transform: translateY(-1px);
+    background-color: $clr-accent-6;
   }
+
+  &:focus {
+    box-shadow: $shadow-xs-focused-primary;
+  }
+}
+
+%default-secondary {
+  @extend %default-button;
+  @include typography('text', 'md', 'medium');
+  color: $clr-accent-5;
+  background-color: $clr-accent-1;
+
+  &:hover {
+    background-color: $clr-accent-2;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: $shadow-xs-focused-primary;
+  }
+}
+
+%default-gray {
+  @extend %default-button;
+  color: $clr-gray-700;
+  background-color: $clr-white;
+  border: 1px solid $clr-gray-300;
+
+  &:hover {
+    color: $clr-gray-800;
+    background-color: $clr-gray-50;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: $focused-gray;
+  }
+}
+
+%default-link {
+  @extend %default;
+  @extend %reset-link;
+  @include typography('text', 'sm', 'medium');
+
+  &:hover {
+    color: $clr-accent-6;
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid $clr-accent-6;
+  }
+}
+
+// ==========
+// Sizes
+// ==========
+
+.sm {
+  @include typography('text', 'sm', 'medium');
+  padding: $gap-8 $gap-14;
+}
+
+.md {
+  @include typography('text', 'sm', 'medium');
+  padding: $gap-10 $gap-16;
+}
+
+.lg {
+  @include typography('text', 'md', 'medium');
+  padding: $gap-10 $gap-18;
+}
+
+.xl {
+  @include typography('text', 'md', 'medium');
+  padding: $gap-12 $gap-20;
+}
+
+.xxl {
+  @include typography('text', 'lg', 'medium');
+  padding: $gap-16 $gap-28;
+}
+
+// ==========
+// Component
+// ==========
+
+.buttonPrimary {
+  @extend %default;
+  @extend %default-primary;
+  border: none;
+}
+
+.buttonSecondaryColor {
+  @extend %default;
+  @extend %default-secondary;
+  border: none;
+}
+
+.buttonSecondaryGray {
+  @extend %default;
+  @extend %default-gray;
+}
+
+.linkPrimary {
+  @extend %default;
+  @extend %reset-link;
+  @extend %default-primary;
+}
+
+.linkSecondaryColor {
+  @extend %default;
+  @extend %reset-link;
+  @extend %default-secondary;
+}
+
+.linkSecondaryGray {
+  @extend %default;
+  @extend %reset-link;
+  @extend %default-gray;
+}
+
+.linkColor {
+  @extend %default-link;
+  color: $clr-accent-5;
+}
+
+.linkGray {
+  @extend %default-link;
+  color: $clr-gray-300;
 }
