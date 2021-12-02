@@ -1,11 +1,13 @@
 import styles from './CheckboxText.module.scss';
 import Checkbox from './Checkbox';
 
-function CheckboxText({ text }) {
+function CheckboxText({ text, input }) {
   return (
     <div className={styles.container}>
-      <Checkbox />
-      <p className={styles.text}>{text}</p>
+      <Checkbox input={input} />
+      <label htmlFor={input.id} className={styles.text}>
+        {text}
+      </label>
     </div>
   );
 }
