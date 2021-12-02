@@ -1,0 +1,29 @@
+@import '../../styles/variables.scss';
+@import '../../styles/typography.scss';
+
+.input {
+  @include typography('text', '5xl', 'medium');
+  color: $clr-gray-300;
+  background-color: $clr-white;
+  text-align: center;
+  border: 1px solid $clr-gray-300;
+  border-radius: 0.5rem;
+  box-shadow: $shadow-xs;
+
+  &:not(:placeholder-shown) {
+    color: $clr-accent-6;
+    border: 1px solid $clr-accent-5;
+    box-shadow: none;
+  }
+
+  &:focus {
+    color: $clr-accent-6;
+    border: 1px solid $clr-accent-5;
+    outline: 4px solid $clr-accent-2;
+  }
+}
+
+.lg {
+  width: 5rem;
+  height: 5rem;
+}
