@@ -1,6 +1,28 @@
-@import '../../styles/index.scss';
+@import '../../styles/variables.scss';
 
 .checkbox {
+  background-color: $clr-white;
   width: 1rem;
   height: 1rem;
+  border: 1px solid $clr-gray-300;
+  border-radius: 4px;
+  appearance: none;
+  transition: $transition-primary;
+
+  &:hover {
+    background-color: $clr-accent-1;
+    border: 1px solid $clr-accent-5;
+  }
+
+  &:focus {
+    background-color: $clr-accent-1;
+    outline: none;
+    border: 1px solid $clr-accent-5;
+    box-shadow: $focused-primary;
+  }
+
+  &:checked {
+    appearance: auto;
+    box-shadow: none;
+  }
 }
