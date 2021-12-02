@@ -1,7 +1,7 @@
 import styles from './Checkbox.module.scss';
 
-function Checkbox() {
-  return <input type="checkbox" className={styles.checkbox} />;
+function Checkbox({ input }) {
+  return <input type="checkbox" {...input} className={styles.checkbox} />;
 }
 
 export default Checkbox;
