@@ -17,3 +17,76 @@
     stroke: $clr-error-600;
   }
 }
+
+@mixin iconFillColor {
+  .primary path {
+    fill: $clr-accent-5;
+  }
+
+  .gray path {
+    fill: $clr-gray-500;
+  }
+
+  .success path {
+    fill: $clr-success-600;
+  }
+
+  .error path {
+    fill: $clr-error-600;
+  }
+}
+
+@mixin for-size($range) {
+  $phone-upper-boundary: 600px;
+  $tablet-portrait-upper-boundary: 900px;
+  $tablet-landscape-upper-boundary: 1200px;
+  $desktop-upper-boundary: 1800px;
+
+  @if $range == phone-only {
+    @media (max-width: #{$phone-upper-boundary - 1}) {
+      @content;
+    }
+  } @else if $range == tablet-portrait-up {
+    @media (min-width: $phone-upper-boundary) {
+      @content;
+    }
+  } @else if $range == tablet-landscape-up {
+    @media (min-width: $tablet-portrait-upper-boundary) {
+      @content;
+    }
+  } @else if $range == desktop-up {
+    @media (min-width: $tablet-landscape-upper-boundary) {
+      @content;
+    }
+  } @else if $range == big-desktop-up {
+    @media (min-width: $desktop-upper-boundary) {
+      @content;
+    }
+  }
+}
+
+@mixin grid-for($range) {
+  @if $range == phone-only {
+    grid-template-columns: repeat(2, 163px);
+    column-gap: $gap-16;
+    justify-content: center;
+  }
+
+  @if $range == tablet-portrait-up {
+    grid-template-columns: repeat(4, 130px);
+    column-gap: $gap-16;
+    justify-content: center;
+  }
+
+  @if $range == tablet-landscape-up {
+    grid-template-columns: repeat(8, 85px);
+    column-gap: $gap-24;
+    justify-content: center;
+  }
+
+  @if $range == desktop-up {
+    grid-template-columns: repeat(12, 74px);
+    column-gap: $gap-32;
+    justify-content: center;
+  }
+}
