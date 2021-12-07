@@ -1,0 +1,35 @@
+@import '../../../styles/variables.scss';
+
+%default {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+%svg-default {
+  width: 1.25rem;
+  height: 1.125rem;
+}
+
+.outerPrimary {
+  background-color: $clr-accent-4;
+  border: 10px solid $clr-accent-1;
+  @extend %default;
+}
+
+.outerPrimary svg {
+  @extend %svg-default;
+}
+
+.outerSuccess {
+  background-color: $clr-success-100;
+  border: 10px solid $clr-success-50;
+  @extend %default;
+}
+
+.outerSuccess svg {
+  @extend %svg-default;
+}
