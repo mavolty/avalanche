@@ -1,0 +1,67 @@
+@import '../../styles/variables.scss';
+@import '../../styles/typography.scss';
+
+%reset-link {
+  text-decoration: none;
+}
+
+%flex-aic {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  @extend %flex-aic;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.previous,
+.next {
+  @extend %reset-link;
+  @extend %flex-aic;
+  color: $clr-gray-900;
+  gap: $gap-8;
+}
+
+.next {
+  flex-direction: row-reverse;
+}
+
+.previousText,
+.nextText {
+  @include typography('text', 'sm', 'medium');
+  display: none;
+}
+
+.pagesDesktop {
+  display: none;
+}
+
+.link {
+  @include typography('text', 'sm', 'medium');
+  @extend %reset-link;
+  @extend %flex-aic;
+  color: $clr-gray-900;
+  color: $clr-accent-5;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: $clr-accent-2;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 900px) {
+  .previousText,
+  .nextText {
+    display: block;
+  }
+
+  .pagesDesktop {
+    display: flex;
+  }
+
+  .pagesMobile {
+    display: none;
+  }
+}
