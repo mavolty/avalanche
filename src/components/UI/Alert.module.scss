@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+@import '../../styles/typography.scss';
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: $gap-16;
+  padding: $gap-12 $gap-16;
+
+  &.error {
+    color: $clr-error-600;
+    background-color: $clr-error-50;
+  }
+
+  &.success {
+    color: $clr-success-600;
+    background-color: $clr-success-50;
+  }
+}
+
+.message {
+  @include typography('text', 'sm', 'regular');
+}
