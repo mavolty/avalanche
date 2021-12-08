@@ -9,6 +9,10 @@
     stroke: $clr-gray-500;
   }
 
+  .dark path {
+    stroke: $clr-gray-800;
+  }
+
   .success path {
     stroke: $clr-success-600;
   }
@@ -25,6 +29,10 @@
 
   .gray path {
     fill: $clr-gray-500;
+  }
+
+  .dark path {
+    fill: $clr-gray-800;
   }
 
   .success path {
