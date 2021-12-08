@@ -1,0 +1,25 @@
+@import '../../styles/variables.scss';
+
+.media {
+  border-radius: 50%;
+}
+
+.sm {
+  width: $gap-24;
+  height: $gap-24;
+}
+
+.md {
+  width: $gap-32;
+  height: $gap-32;
+}
+
+.lg {
+  width: $gap-48;
+  height: $gap-48;
+}
+
+.xl {
+  width: $gap-64;
+  height: $gap-64;
+}
