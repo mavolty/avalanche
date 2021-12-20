@@ -9,8 +9,12 @@
     stroke: $clr-gray-500;
   }
 
-  .dark path {
-    stroke: $clr-gray-800;
+  .black path {
+    stroke: $clr-black;
+  }
+
+  .white path {
+    stroke: $clr-white;
   }
 
   .success path {
@@ -31,8 +35,12 @@
     fill: $clr-gray-500;
   }
 
-  .dark path {
-    fill: $clr-gray-800;
+  .black path {
+    fill: $clr-black;
+  }
+
+  .white path {
+    fill: $clr-white;
   }
 
   .success path {
@@ -94,7 +102,7 @@
 
   @if $range == desktop-up {
     grid-template-columns: repeat(12, 74px);
-    column-gap: $gap-32;
+    column-gap: $gap-24;
     justify-content: center;
   }
 }
