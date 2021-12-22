@@ -1,7 +1,6 @@
 @import '../../styles/variables.scss';
 @import '../../styles/typography.scss';
 
-
 // ==========
 // Extends
 // ==========
@@ -14,15 +13,22 @@
   display: inline-block;
   cursor: pointer;
   transition: $transition-primary;
-}
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-%default:focus {
-  outline: 4px solid $clr-gray-300;
+  & > * + * {
+    margin-left: .8rem;
+  }
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
 }
 
 %default-button {
-  text-align: center;
-  border-radius: 0.5rem;
+  border-radius: 2px;
   box-shadow: $shadow-xs;
 }
 
@@ -164,4 +170,14 @@
 .linkGray {
   @extend %default-link;
   color: $clr-gray-300;
+}
+
+.linkBlack {
+  @extend %default-link;
+  color: $clr-black;
+}
+
+.linkWhite {
+  @extend %default-link;
+  color: $clr-white;
 }
