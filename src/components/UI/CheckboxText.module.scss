@@ -8,4 +8,5 @@
 
 .text {
   @include typography('text', 'sm', 'medium');
+  cursor: pointer;
 }
