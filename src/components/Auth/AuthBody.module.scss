@@ -1,0 +1,19 @@
+@import '../../styles/variables.scss';
+@import '../../styles/typography.scss';
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.forgot {
+  @include typography('text', 'sm', 'medium');
+  color: $clr-accent-5;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-16;
+}
