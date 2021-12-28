@@ -1,0 +1,19 @@
+@import '../../styles/variables.scss';
+@import '../../styles/typography.scss';
+
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $gap-12;
+}
+
+.title {
+  @include typography('display', 'sm', 'bold');
+}
+
+.text {
+  @include typography('text', 'md', 'regular');
+  color: $clr-gray-500;
+}
