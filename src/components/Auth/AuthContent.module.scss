@@ -1,0 +1,16 @@
+@import '../../styles/variables.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-32;
+  width: 95%;
+  max-width: 22.5rem;
+  margin-inline: auto;
+}
+
+@media screen and (min-width: 37.5rem) {
+  .container {
+    padding-inline: unset;
+  }
+}

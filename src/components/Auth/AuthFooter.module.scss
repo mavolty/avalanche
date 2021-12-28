@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+@import '../../styles/typography.scss';
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $gap-4;
+}
+
+.text {
+  @include typography('text', 'sm', 'regular');
+  color: $clr-gray-500;
+}
