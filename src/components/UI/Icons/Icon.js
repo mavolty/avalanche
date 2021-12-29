@@ -12,8 +12,10 @@ import User from './User';
 import Hamburger from './Hamburger';
 import ExclamationCircle from './ExclamationCircle';
 import TickCircle from './TickCircle';
+import Spinner from './Spinner';
+import Close from './Close';
 
-function Icon({ name, color, ...props }) {
+function Icon({ name, color = 'gray', ...props }) {
   if (name === 'arrow') {
     return <Arrow color={color} {...props} />;
   }
@@ -68,6 +70,14 @@ function Icon({ name, color, ...props }) {
 
   if (name === 'tick-circle') {
     return <TickCircle color={color} {...props} />;
+  }
+
+  if (name === 'spinner') {
+    return <Spinner color={color} {...props} />;
+  }
+
+  if (name === 'close') {
+    return <Close color={color} {...props} />;
   }
 }
 
