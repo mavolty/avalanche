@@ -1,0 +1,19 @@
+import styles from './Close.module.scss';
+
+function Close({ color, ...props }) {
+  return (
+    <svg
+      className={styles[color]}
+      width="15"
+      height="15"
+      viewBox="0 0 15 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path d="M1.5 1.5L13.5 13.5M1.5 13.5L13.5 1.5" stroke="black" />
+    </svg>
+  );
+}
+
+export default Close;
