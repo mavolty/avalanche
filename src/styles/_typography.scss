@@ -6,6 +6,7 @@
     font-family: $ff-display;
     font-size: 1.125rem;
     line-height: 1.5rem;
+
     @if $weight == 'regular' {
       font-weight: 400;
     }
@@ -15,6 +16,10 @@
     font-family: $ff-display;
     font-size: 1.5rem;
     line-height: 2rem;
+
+    @if $weight == 'regular' {
+      font-weight: 400;
+    }
 
     @if $weight == 'bold' {
       font-weight: 700;
@@ -26,6 +31,10 @@
     font-size: 1.875rem;
     line-height: 2.375rem;
 
+    @if $weight == 'regular' {
+      font-weight: 400;
+    }
+
     @if $weight == 'bold' {
       font-weight: 700;
     }
@@ -36,6 +45,10 @@
     font-size: 2.25rem;
     line-height: 2.75rem;
 
+    @if $weight == 'regular' {
+      font-weight: 400;
+    }
+
     @if $weight == 'bold' {
       font-weight: 700;
     }
@@ -45,6 +58,38 @@
     font-family: $ff-display;
     font-size: 2.5rem;
     line-height: 3rem;
+
+    @if $weight == 'regular' {
+      font-weight: 400;
+    }
+
+    @if $weight == 'bold' {
+      font-weight: 700;
+    }
+  }
+
+  @if $type == 'display' and $size == 'xl' {
+    font-family: $ff-display;
+    font-size: 3rem;
+    line-height: 3.5rem;
+
+    @if $weight == 'regular' {
+      font-weight: 400;
+    }
+
+    @if $weight == 'bold' {
+      font-weight: 700;
+    }
+  }
+
+  @if $type == 'display' and $size == '2xl' {
+    font-family: $ff-display;
+    font-size: 3.5rem;
+    line-height: 4rem;
+
+    @if $weight == 'regular' {
+      font-weight: 400;
+    }
 
     @if $weight == 'bold' {
       font-weight: 700;
