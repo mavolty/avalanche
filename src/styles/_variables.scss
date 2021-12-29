@@ -51,6 +51,7 @@ $gap-48: 3rem;
 $gap-64: 4rem;
 $gap-72: 4.5rem;
 $gap-96: 6rem;
+$gap-144: 9rem;
 
 $shadow-xs: 0 1px 2px hsla(220, 43%, 11%, 0.05);
 $shadow-sm: 0 1px 3px hsla(220, 43%, 11%, 0.1),
@@ -68,4 +69,6 @@ $shadow-xs-focused-gray: $shadow-xs, $focused-gray;
 $shadow-sm-focused-primary: $shadow-sm, $focused-primary;
 $shadow-sm-focused-gray: $shadow-sm, $focused-gray;
 
-$transition-primary: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-primary: cubic-bezier(0.4, 0, 0.2, 1);
+$transition-decelerated: cubic-bezier(0, 0, 0.2, 1);
+$transition-accelerated: cubic-bezier(0.4, 0, 1, 1);
