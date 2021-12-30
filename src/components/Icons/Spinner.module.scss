@@ -1,0 +1,25 @@
+@import '../../styles/variables.scss';
+
+.primary circle {
+  stroke: $clr-accent-5;
+}
+
+.gray circle {
+  stroke: $clr-gray-500;
+}
+
+.black circle {
+  stroke: $clr-black;
+}
+
+.white circle {
+  stroke: $clr-white;
+}
+
+.success circle {
+  stroke: $clr-success-600;
+}
+
+.error circle {
+  stroke: $clr-error-600;
+}

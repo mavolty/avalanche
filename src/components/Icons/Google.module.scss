@@ -1,0 +1,17 @@
+@import '../../styles/variables.scss';
+
+.gray {
+  fill: $clr-gray-400;
+
+  &:hover {
+    fill: $clr-gray-500;
+  }
+}
+
+.white {
+  fill: $clr-white;
+
+  &:hover {
+    fill: $clr-gray-200;
+  }
+}
