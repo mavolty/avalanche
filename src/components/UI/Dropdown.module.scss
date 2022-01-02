@@ -1,0 +1,82 @@
+@import '../../styles/variables.scss';
+@import '../../styles/typography.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+  position: relative;
+}
+
+.button {
+  @include typography('text', 'sm', 'medium');
+  color: inherit;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: $gap-16;
+  cursor: pointer;
+}
+
+.dropdown {
+  color: $clr-gray-900;
+  background-color: $clr-white;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding: $gap-12 $gap-8;
+  border-radius: 0.5rem;
+  box-shadow: $shadow-sm;
+  transform-origin: top center;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.items {
+  @include typography('text', 'sm', 'regular');
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.header {
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  gap: $gap-12;
+  padding-inline: $gap-8;
+  padding-bottom: $gap-12;
+  margin-bottom: $gap-12;
+  border-bottom: 1px solid $clr-gray-100;
+
+  &Name {
+    @include typography('text', 'sm', 'medium');
+  }
+
+  &Email {
+    @include typography('text', 'sm', 'regular');
+  }
+}
+
+.item {
+  @include typography('text', 'sm', 'regular');
+  color: inherit;
+  background-color: transparent;
+  text-decoration: none;
+  text-align: left;
+  border: none;
+  outline: inherit;
+  display: block;
+  width: 100%;
+  padding-inline: $gap-8;
+  padding-block: $gap-8;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &Active {
+    color: $clr-accent-6;
+    background-color: $clr-accent-1;
+  }
+}
