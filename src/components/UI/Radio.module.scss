@@ -1,0 +1,42 @@
+@import '../../styles/variables.scss';
+
+.radio {
+  color: $clr-gray-700;
+  background-color: $clr-white;
+  border: 1px solid $clr-gray-300;
+  text-align: center;
+  border-radius: 2px;
+  box-shadow: $shadow-xs;
+  display: inline-block;
+  cursor: pointer;
+  transition: $transition-primary;
+  padding: $gap-10 $gap-18;
+
+  &Checked {
+    color: $clr-accent-6;
+    background-color: $clr-accent-1;
+    border-color: $clr-accent-5;
+  }
+
+  &:hover {
+    border-color: $clr-gray-900;
+    box-shadow: $shadow-xs;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: $shadow-xs-focused-gray;
+  }
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
