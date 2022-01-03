@@ -1,5 +1,6 @@
 import styles from './Pagination.module.scss';
-import Icon from './Icons/Icon';
+import Icon from '../Icons/Icon';
+import { Link } from 'react-router-dom';
 
 function Pagination({ postPerPage, totalPosts, currentPage, paginate }) {
   const pageNumbers = [];
@@ -8,22 +9,41 @@ function Pagination({ postPerPage, totalPosts, currentPage, paginate }) {
     pageNumbers.push(i);
   }
 
+  const paginatePrevious = () => {
+    if (currentPage > 1) {
+      paginate(currentPage - 1);
+    }
+  };
+
+  const paginateNext = () => {
+    if (currentPage < pageNumbers.length) {
+      paginate(currentPage + 1);
+    }
+  };
+
   return (
     <div className={styles.container}>
-      <a href="#" className={styles.previous}>
-        <Icon name="arrow" color="gray" direction="left" />
+      <Link
+        to={`/products/page/${currentPage - 1}`}
+        onClick={paginatePrevious}
+        className={styles.previous}
+      >
+        <Icon name='arrow' color='gray' direction='left' />
         <p className={styles.previousText}>Previous</p>
-      </a>
+      </Link>
       <ul className={styles.pagesDesktop}>
         {pageNumbers.map(number => (
           <li key={number} className={styles.item}>
-            <a
-              href="#"
+            <Link
+              to={`/products/page/${number}`}
+              href='#'
               onClick={() => paginate(number)}
-              className={styles.link}
+              className={`${styles.link} ${
+                currentPage === number ? styles.linkActive : ''
+              }`}
             >
               {number}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
@@ -32,10 +52,14 @@ function Pagination({ postPerPage, totalPosts, currentPage, paginate }) {
           Page {currentPage} of {pageNumbers.length}
         </p>
       </div>
-      <a href="#" className={styles.next}>
-        <Icon name="arrow" color="gray" direction="right" />
+      <Link
+        to={`/products/page/${currentPage + 1}`}
+        onClick={paginateNext}
+        className={styles.next}
+      >
+        <Icon name='arrow' color='gray' direction='right' />
         <p className={styles.nextText}>Next</p>
-      </a>
+      </Link>
     </div>
   );
 }

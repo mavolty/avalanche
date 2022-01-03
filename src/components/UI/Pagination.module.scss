@@ -41,14 +41,17 @@
 .link {
   @include typography('text', 'sm', 'medium');
   @extend %reset-link;
-  @extend %flex-aic;
   color: $clr-gray-900;
-  color: $clr-accent-5;
+  @extend %flex-aic;
   justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
-  background-color: $clr-accent-2;
-  border-radius: 50%;
+
+  &Active {
+    color: $clr-accent-5;
+    background-color: $clr-accent-1;
+    border-radius: 50%;
+  }
 }
 
 @media screen and (min-width: 900px) {
