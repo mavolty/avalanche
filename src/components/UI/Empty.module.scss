@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+@import '../../styles/typography.scss';
+
+.container {
+  text-align: center;
+
+  & > * + * {
+    margin-top: $gap-24;
+  }
+}
+
+.illustration {
+  width: 100%;
+}
+
+.title {
+  @include typography('text', 'xl', 'medium');
+}
+
+.text {
+  @include typography('text', 'md', 'regular');
+  color: $clr-gray-500;
+}
