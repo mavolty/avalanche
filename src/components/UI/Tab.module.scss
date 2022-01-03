@@ -1,0 +1,36 @@
+@import '../../styles/variables.scss';
+@import '../../styles/typography.scss';
+
+.list {
+  display: flex;
+  gap: $gap-32;
+  border-bottom: 1px solid $clr-gray-300;
+}
+
+.tab {
+  @include typography('text', 'md', 'medium');
+  color: $clr-gray-500;
+  display: inline-block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  padding-bottom: $gap-16;
+
+  &Selected {
+    color: $clr-accent-5;
+    border-bottom: 1px solid $clr-accent-6;
+  }
+}
+
+.panels {
+  margin-top: $gap-16;
+}
+
+.panel {
+  @include typography('text', 'md', 'regular');
+
+  & > * + * {
+    margin-top: $gap-16;
+  }
+}
