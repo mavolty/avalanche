@@ -14,6 +14,7 @@ import ExclamationCircle from './ExclamationCircle';
 import TickCircle from './TickCircle';
 import Spinner from './Spinner';
 import Close from './Close';
+import Exit from './Exit';
 
 function Icon({ name, color = 'gray', ...props }) {
   if (name === 'arrow') {
@@ -78,6 +79,10 @@ function Icon({ name, color = 'gray', ...props }) {
 
   if (name === 'close') {
     return <Close color={color} {...props} />;
+  }
+
+  if (name === 'exit') {
+    return <Exit color={color} {...props} />;
   }
 }
 
