@@ -1,0 +1,30 @@
+@import '../../styles/variables.scss';
+@import '../../styles/typography.scss';
+
+.container {
+  background-color: $clr-white;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  gap: $gap-12;
+  padding: $gap-10 $gap-16;
+  border: 1px solid $clr-gray-300;
+  border-radius: 0.5rem;
+  box-shadow: $shadow-xs;
+  transition: $transition-primary;
+  cursor: pointer;
+}
+
+.container:hover {
+  background-color: $clr-gray-50;
+}
+
+.container:focus {
+  outline: none;
+  box-shadow: $shadow-xs-focused-gray;
+}
+
+.text {
+  @include typography('text', 'md', 'medium');
+  color: $clr-gray-700;
+}
