@@ -1,0 +1,60 @@
+@import '../../styles/variables.scss';
+@import '../../styles/typography.scss';
+
+.container {
+  width: 100%;
+
+  & > * + * {
+    margin-top: $gap-16;
+  }
+}
+
+.link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.media {
+  aspect-ratio: 27/32;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info {
+  width: 100%;
+}
+
+.category {
+  @include typography('text', '2xs', 'regular');
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: $clr-error-600;
+  margin-bottom: $gap-4;
+}
+
+.name {
+  color: $clr-black;
+  @include typography('text', 'sm', 'medium');
+  margin-bottom: $gap-8;
+}
+
+.prices {
+  display: flex;
+  align-items: center;
+  gap: $gap-12;
+}
+
+.priceBefore {
+  @include typography('text', 'xs', 'regular');
+  text-decoration: line-through;
+  color: $clr-gray-500;
+}
+
+.price {
+  @include typography('text', 'sm', 'regular');
+}
