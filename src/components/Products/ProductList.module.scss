@@ -1,0 +1,53 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $gap-32 $gap-16;
+
+  @include for-size(tablet-portrait-up) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include for-size(tablet-landscape-up) {
+    grid-template-columns: repeat(9, 1fr);
+    gap: $gap-32 $gap-24;
+  }
+
+  @include for-size(desktop-up) {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  div {
+    grid-column: 1 / -1;
+
+    @include for-size(tablet-portrait-up) {
+      grid-column: 2 / -2;
+    }
+
+    @include for-size(tablet-landscape-up) {
+      grid-column: 4 / -4;
+    }
+
+    @include for-size(desktop-up) {
+      grid-column: 5 / -5;
+    }
+  }
+}
+
+.productItem {
+  grid-column: span 1;
+
+  @include for-size(tablet-portrait-up) {
+    grid-column: span 2;
+  }
+
+  @include for-size(tablet-landscape-up) {
+    grid-column: span 3;
+  }
+
+  @include for-size(desktop-up) {
+    grid-column: span 4;
+  }
+}
