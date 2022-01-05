@@ -1,5 +1,6 @@
 @import '../../styles/variables.scss';
 @import '../../styles/typography.scss';
+@import '../../styles/mixins.scss';
 
 // ==========
 // Extends
@@ -18,7 +19,7 @@
   justify-content: center;
 
   & > * + * {
-    margin-left: .8rem;
+    margin-left: 0.8rem;
   }
 
   svg {
@@ -48,7 +49,6 @@
 
 %default-secondary {
   @extend %default-button;
-  @include typography('text', 'md', 'medium');
   color: $clr-accent-5;
   background-color: $clr-accent-1;
 
@@ -82,7 +82,6 @@
 %default-link {
   @extend %default;
   @extend %reset-link;
-  @include typography('text', 'sm', 'medium');
 
   &:hover {
     color: $clr-accent-6;
@@ -94,33 +93,72 @@
   }
 }
 
+%sm {
+  @include typography('text', 'sm', 'medium');
+  padding: $gap-8 $gap-14;
+}
+
+%md {
+  @extend %sm;
+
+  @include for-size(tablet-landscape-up) {
+    @include typography('text', 'sm', 'medium');
+    padding: $gap-10 $gap-16;
+  }
+}
+
+%lg {
+  @include typography('text', 'sm', 'medium');
+  padding: $gap-10 $gap-16;
+
+  @include for-size(tablet-landscape-up) {
+    @include typography('text', 'md', 'medium');
+    padding: $gap-10 $gap-18;
+  }
+}
+
+%xl {
+  @include typography('text', 'md', 'medium');
+  padding: $gap-10 $gap-18;
+
+  @include for-size(tablet-landscape-up) {
+    @include typography('text', 'md', 'medium');
+    padding: $gap-12 $gap-20;
+  }
+}
+
+%xxl {
+  @include typography('text', 'md', 'medium');
+  padding: $gap-12 $gap-20;
+
+  @include for-size(tablet-landscape-up) {
+    @include typography('text', 'lg', 'medium');
+    padding: $gap-16 $gap-28;
+  }
+}
+
 // ==========
 // Sizes
 // ==========
 
 .sm {
-  @include typography('text', 'sm', 'medium');
-  padding: $gap-8 $gap-14;
+  @extend %sm;
 }
 
 .md {
-  @include typography('text', 'sm', 'medium');
-  padding: $gap-10 $gap-16;
+  @extend %md;
 }
 
 .lg {
-  @include typography('text', 'md', 'medium');
-  padding: $gap-10 $gap-18;
+  @extend %lg;
 }
 
 .xl {
-  @include typography('text', 'md', 'medium');
-  padding: $gap-12 $gap-20;
+  @extend %xl;
 }
 
 .xxl {
-  @include typography('text', 'lg', 'medium');
-  padding: $gap-16 $gap-28;
+  @extend %xxl;
 }
 
 // ==========
