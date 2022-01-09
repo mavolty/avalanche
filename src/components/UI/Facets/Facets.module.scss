@@ -1,0 +1,11 @@
+@import '../../../styles/variables.scss';
+
+.container > * + * {
+  margin-top: $gap-16;
+}
+
+@media screen and (min-width: 900px) {
+  .container > * + * {
+    margin-top: $gap-24;
+  }
+}
