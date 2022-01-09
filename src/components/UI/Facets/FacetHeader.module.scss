@@ -1,0 +1,16 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/typography.scss';
+
+.container {
+  color: $clr-gray-900;
+  @include typography('text', 'xs', 'medium');
+  width: 100%;
+}
+
+@media screen and (min-width: 900px) {
+  .container {
+    border-bottom: 1px solid $clr-gray-300;
+    padding-bottom: $gap-24;
+    text-transform: uppercase;
+  }
+}
