@@ -1,0 +1,202 @@
+@import '../../styles/variables.scss';
+@import '../../styles/typography.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+  display: grid;
+  @include grid-for(phone-only);
+  padding-block: $gap-16;
+
+  @include for-size(tablet-portrait-up) {
+    @include grid-for(tablet-portrait-up);
+  }
+
+  @include for-size(tablet-landscape-up) {
+    @include grid-for(tablet-landscape-up);
+    padding-block: $gap-24;
+  }
+
+  @include for-size(desktop-up) {
+    @include grid-for(desktop-up);
+  }
+}
+
+.gallery {
+  grid-column: 1 / -1;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  & > * {
+    display: none;
+  }
+
+  & > * + * {
+    display: block;
+  }
+
+  @include for-size(tablet-landscape-up) {
+    grid-column: 1 / 5;
+    display: grid;
+    grid-template-columns: 15% 80%;
+    gap: $gap-24;
+    margin-right: $gap-16;
+
+    & > * {
+      display: block;
+    }
+  }
+
+  @include for-size(desktop-up) {
+    grid-column: 1 / 7;
+    gap: $gap-32;
+  }
+}
+
+.details {
+  grid-column: 1 / -1;
+  margin-top: $gap-16;
+
+  & > * + * {
+    margin-top: $gap-16;
+  }
+
+  @include for-size(tablet-landscape-up) {
+    grid-column: 5 / -1;
+    margin-left: $gap-16;
+    margin-top: unset;
+  }
+
+  @include for-size(desktop-up) {
+    grid-column: 7 / -1;
+
+    & > * + * {
+      margin-top: $gap-32;
+    }
+  }
+}
+
+.detailHeader {
+  & > * + * {
+    margin-top: $gap-16;
+  }
+
+  @include for-size(desktop-up) {
+    & > * + * {
+      margin-top: $gap-24;
+    }
+  }
+}
+
+.detailMain {
+  & > * + * {
+    margin-top: $gap-24;
+  }
+}
+
+.name {
+  @include typography('display', 'xs', 'bold');
+
+  @include for-size(desktop-up) {
+    @include typography('display', 'sm', 'bold');
+  }
+}
+
+.prices {
+  @include typography('text', 'md', 'medium');
+  display: flex;
+  gap: $gap-16;
+
+  @include for-size(desktop-up) {
+    @include typography('text', 'lg', 'medium');
+  }
+}
+
+.priceBefore {
+  color: $clr-gray-500;
+  font-weight: 400;
+  text-decoration: line-through;
+}
+
+.options {
+  width: 50%;
+
+  & > * + * {
+    margin-top: $gap-8;
+  }
+
+  @include for-size(desktop-up) {
+    & > * + * {
+      margin-top: $gap-16;
+    }
+  }
+}
+
+.optionSizes {
+  display: flex;
+  gap: $gap-16;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-16;
+  margin-top: $gap-16;
+
+  & a:first-of-type {
+    display: flex;
+    align-items: center;
+    gap: $gap-16;
+  }
+
+  @include for-size(tablet-portrait-up) {
+    flex-direction: row;
+    gap: $gap-32;
+  }
+
+  @include for-size(tablet-landscape-up) {
+    flex-direction: column;
+    gap: $gap-16;
+  }
+
+  @include for-size(desktop-up) {
+    flex-direction: row;
+    gap: $gap-32;
+    margin-top: $gap-32;
+  }
+}
+
+.info {
+  grid-column: 1 / -1;
+  margin-top: $gap-64;
+  padding-bottom: $gap-64;
+  border-bottom: 1px solid $clr-gray-300;
+}
+
+.related {
+  grid-column: 1 / -1;
+  margin-top: $gap-32;
+
+  & > * + * {
+    margin-top: $gap-32;
+  }
+
+  &Title {
+    @include typography('text', 'md', 'medium');
+  }
+
+  & ul {
+    @include grid-for(phone-only);
+
+    @include for-size(tablet-portrait-up) {
+      @include grid-for(tablet-portrait-up);
+    }
+
+    @include for-size(tablet-landscape-up) {
+      @include grid-for(tablet-landscape-up);
+    }
+
+    @include for-size(desktop-up) {
+      @include grid-for(desktop-up);
+    }
+  }
+}
