@@ -78,6 +78,8 @@
 
 .hamburger,
 .close {
+  cursor: pointer;
+
   svg {
     display: block;
   }
