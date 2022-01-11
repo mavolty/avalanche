@@ -13,7 +13,7 @@ const activityList = [
   {
     text: 'Pesanan saya',
     icon: 'cart',
-    link: '/orders',
+    link: '/checkout',
   },
   {
     text: 'Wishlist',
