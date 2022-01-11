@@ -1,0 +1,19 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.container {
+  background-color: $clr-white;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  padding: $gap-14 $gap-32;
+  box-shadow: $shadow-sm;
+
+  @include for-size(tablet-landscape-up) {
+    display: none;
+  }
+}
