@@ -35,7 +35,7 @@ function NavbarStatus({ color }) {
     {
       text: 'Pesanan saya',
       element: 'link',
-      target: '/orders',
+      target: '/checkout',
     },
     {
       text: 'Yang disukai',
