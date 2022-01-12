@@ -1,0 +1,97 @@
+@import '../../styles/variables.scss';
+@import '../../styles/typography.scss';
+@import '../../styles/mixins.scss';
+
+%icon-default {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  position: relative;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  @include for-size(tablet-landscape-up) {
+    top: -25%;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+%icon-inner {
+  width: $gap-10;
+  height: $gap-10;
+  border-radius: 50%;
+
+  @include for-size(tablet-landscape-up) {
+    width: $gap-12;
+    height: $gap-12;
+  }
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+
+  &:not(:first-child)::after {
+    content: '';
+    position: relative;
+    top: 0.35rem;
+    left: -50%;
+    height: 2px;
+    background-color: $clr-gray-200;
+    order: -1;
+  }
+
+  &Active {
+    &:not(:first-child)::after {
+      background-color: $clr-accent-5;
+    }
+  }
+}
+
+.iconDefault {
+  background-color: $clr-gray-50;
+  @extend %icon-default;
+
+  .iconInner {
+    background-color: $clr-gray-200;
+    @extend %icon-inner;
+  }
+}
+
+.iconActive {
+  background-color: $clr-accent-1;
+  border: 4px solid $clr-accent-3;
+  @extend %icon-default;
+
+  .iconInner {
+    background-color: $clr-accent-5;
+    @extend %icon-inner;
+  }
+}
+
+.iconCompleted {
+  background-color: $clr-accent-1;
+  border: 4px solid $clr-accent-3;
+  @extend %icon-default;
+
+  svg {
+    width: $gap-16;
+    height: $gap-16;
+    display: block;
+  }
+}
