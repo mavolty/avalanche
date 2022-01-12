@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+@import '../../styles/typography.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+  display: grid;
+  @include grid-for(phone-only);
+  row-gap: $gap-64;
+  overflow: hidden;
+
+  @include for-size(tablet-portrait-up) {
+    @include grid-for(tablet-portrait-up);
+  }
+
+  @include for-size(tablet-landscape-up) {
+    row-gap: $gap-144;
+    @include grid-for(tablet-landscape-up);
+  }
+
+  @include for-size(desktop-up) {
+    @include grid-for(desktop-up);
+  }
+}
