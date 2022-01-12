@@ -1,0 +1,7 @@
+@import '../../styles/variables.scss';
+@import '../../styles/typography.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+  grid-column: 1 / -1;
+}
