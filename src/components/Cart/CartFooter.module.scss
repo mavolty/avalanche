@@ -1,0 +1,95 @@
+@import '../../styles/variables.scss';
+@import '../../styles/typography.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+  grid-column: 1 / -1;
+  margin-bottom: $gap-24;
+
+  & > * + * {
+    margin-top: $gap-32;
+  }
+
+  @include for-size(tablet-portrait-up) {
+    & form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+
+      & > * + * {
+        width: 100%;
+      }
+    }
+  }
+
+  @include for-size(tablet-landscape-up) {
+    display: flex;
+    justify-content: space-between;
+    gap: $gap-64;
+    margin-bottom: unset;
+
+    & > * + * {
+      margin-top: unset;
+    }
+
+    & form {
+      grid-template-columns: none;
+      gap: $gap-16;
+      flex-basis: 40%;
+    }
+  }
+
+  @include for-size(desktop-up) {
+    & form {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
+
+.action {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $gap-16;
+
+  & button {
+    color: $clr-gray-600;
+    background-color: $clr-gray-200;
+    cursor: not-allowed;
+
+    &:hover {
+      color: $clr-gray-600;
+      background-color: $clr-gray-200;
+    }
+  }
+
+  @include for-size(desktop-up) {
+    display: flex;
+    align-items: center;
+    gap: $gap-64;
+  }
+}
+
+.total {
+  color: $clr-gray-500;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include for-size(tablet-landscape-up) {
+    display: block;
+  }
+}
+
+.totalCart {
+  color: $clr-gray-900;
+  @include typography('text', 'sm', 'medium');
+
+  @include for-size(tablet-portrait-up) {
+    @include typography('text', 'md', 'medium');
+  }
+
+  @include for-size(tablet-landscape-up) {
+    @include typography('text', 'lg', 'medium');
+  }
+}
