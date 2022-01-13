@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+  grid-column: 1 / -1;
+
+  @include for-size(tablet-landscape-up) {
+    grid-column: 6 / -1;
+  }
+
+  @include for-size(desktop-up) {
+    grid-column: 9 / -1;
+  }
+}
