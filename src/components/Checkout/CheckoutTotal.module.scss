@@ -1,0 +1,42 @@
+@import '../../styles/variables.scss';
+@import '../../styles/typography.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+  padding: $gap-48 $gap-32;
+  background-color: $clr-gray-200;
+
+  & > * + * {
+    margin-top: $gap-32;
+  }
+}
+
+.list {
+  color: $clr-gray-500;
+  background-color: $clr-gray-200;
+
+  & > * + * {
+    margin-top: $gap-12;
+  }
+}
+
+.item,
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: space-between;
+
+  &Amount {
+    text-align: right;
+  }
+}
+
+.item {
+  @include typography('text', 'xs', 'regular');
+}
+
+.product {
+  @include typography('text', 'sm', 'medium');
+  color: $clr-gray-700;
+}
