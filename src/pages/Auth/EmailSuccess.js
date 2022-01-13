@@ -16,7 +16,7 @@ function EmailSuccess({ actionCode }) {
         console.log(resp);
       })
       .catch(error => {
-        console.log(error);
+        console.log('There is something wrong', error);
       });
   }, [actionCode]);
 
@@ -28,12 +28,12 @@ function EmailSuccess({ actionCode }) {
 
   const authBody = {
     button: {
-      element: 'link',
+      element: 'button',
       theme: 'primary',
       size: 'lg',
       text: 'Continue',
       input: {
-        to: from,
+        onClick: () => window.history.replaceState({}, '', from),
       },
     },
   };
