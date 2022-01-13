@@ -42,7 +42,10 @@ function RequireAuth({ authStatus }) {
 function AlreadyAuth({ authStatus }) {
   const location = useLocation();
 
-  if (authStatus) {
+  if (
+    authStatus &&
+    (!location.pathname === '/login' || !location.pathname === '/register')
+  ) {
     return <Navigate to='/' state={{ from: location }} />;
   }
 
