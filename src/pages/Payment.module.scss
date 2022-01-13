@@ -1,0 +1,53 @@
+@import '../styles/variables.scss';
+@import '../styles/typography.scss';
+@import '../styles/mixins.scss';
+
+.container {
+  display: grid;
+  @include grid-for(phone-only);
+  row-gap: $gap-32;
+  padding-block: $gap-8;
+
+  & > * {
+    grid-column: 1 / -1;
+  }
+
+  @include for-size(phone-only) {
+    & + footer {
+      margin-top: 0;
+    }
+  }
+
+  @include for-size(tablet-portrait-up) {
+    row-gap: $gap-48;
+    @include grid-for(tablet-portrait-up);
+  }
+
+  @include for-size(tablet-landscape-up) {
+    @include grid-for(tablet-landscape-up);
+    row-gap: $gap-64;
+    justify-content: center;
+  }
+
+  @include for-size(desktop-up) {
+    @include grid-for(desktop-up);
+    row-gap: $gap-96;
+    padding-block: 5rem;
+  }
+}
+
+.cartContainer,
+.checkoutContainer {
+  & ol {
+    grid-column: 1 / -1;
+  }
+}
+
+.heading {
+  grid-column: 1 / -1;
+  @include typography('display', 'xs', 'regular');
+
+  @include for-size(tablet-landscape-up) {
+    @include typography('display', 'lg', 'regular');
+  }
+}
