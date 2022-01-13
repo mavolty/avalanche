@@ -7,6 +7,12 @@ require('dotenv').config();
 
 const app = express();
 
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+});
+
 app.use(
   cors({
     origin: 'http://localhost:3000',
@@ -75,14 +81,6 @@ app.get('/confirmation', (req, res) => {
   axios(options).then(response => {
     res.json(response.data);
   });
-
-  if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('build'));
-
-    app.get('*', (req, res) => {
-      res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
-    });
-  }
 });
 
 app.listen(port, () => console.log('Server started on port ' + port));
