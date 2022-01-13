@@ -38,17 +38,18 @@ function Register() {
         password: event.password,
         firstName: event.firstName,
         lastName: event.lastName,
-        displayName: `${event.firstName} ${event.lastName}`,
+        displayName: `${event.firstName} ${event.lastName}`.trim(),
         photoURL,
       })
-    ).then(async result => {
-      if (result.meta.requestStatus === 'fulfilled')
+    ).then(result => {
+      if (result.meta.requestStatus === 'fulfilled') {
         navigate('/email/verify', { replace: true });
+      }
     });
   };
 
   const googleHandler = async () => {
-    dispatch(authWithGoogle({ photoURL })).then(async result => {
+    dispatch(authWithGoogle({ photoURL })).then(result => {
       if (result.meta.requestStatus === 'fulfilled') {
         navigate('/', { replace: true });
       }

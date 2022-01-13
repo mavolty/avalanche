@@ -20,6 +20,7 @@ export const register = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     const { email, password, firstName, lastName, displayName, photoURL } =
       data;
+
     const errorCode = {
       'auth/email-already-in-use': 'Email sudah digunakan',
       'auth/operation-not-allowed': 'Operasi tidak diizinkan',
@@ -37,7 +38,14 @@ export const register = createAsyncThunk(
         photoURL,
       });
 
-      await setDoc(doc(db, 'users', userCredential.user.uid), {
+      await sendEmailVerification(userCredential.user);
+
+      const cart = await commerce.cart.refresh();
+
+      const cartRef = doc(db, 'cart', userCredential.user.uid);
+      const userRef = doc(db, 'users', userCredential.user.uid);
+
+      await setDoc(userRef, {
         email,
         firstName,
         lastName,
@@ -45,11 +53,9 @@ export const register = createAsyncThunk(
         photoURL,
       });
 
-      const cart = await commerce.cart.refresh();
-      const docRef = doc(db, 'cart', userCredential.user.uid);
-      await setDoc(docRef, cart);
+      await setDoc(cartRef, cart);
 
-      return await sendEmailVerification(userCredential.user);
+      return userCredential;
     } catch (error) {
       return rejectWithValue(errorCode[error.code] || null);
     }
@@ -65,11 +71,17 @@ export const authWithGoogle = createAsyncThunk(
       const token = credential.accessToken;
       const user = result.user;
 
-      const userRef = doc(db, 'users', user.uid);
-      const userData = await getDoc(userRef);
+      if (data.photoURL)
+        await updateProfile(user, {
+          photoURL: data.photoURL,
+        });
 
       const cart = await commerce.cart.refresh();
+
       const cartRef = doc(db, 'cart', user.uid);
+      const userRef = doc(db, 'users', user.uid);
+
+      const userData = await getDoc(userRef);
 
       if (userData.exists()) {
         return {
@@ -78,18 +90,12 @@ export const authWithGoogle = createAsyncThunk(
         };
       }
 
-      const { photoURL } = data;
-
-      await updateProfile(user, {
-        photoURL,
-      });
-
       await setDoc(userRef, {
         email: user.email,
         firstName: user.displayName.split(' ')[0],
         lastName: user.displayName.split(' ')[1],
         displayName: user.displayName,
-        photoURL,
+        photoURL: data.photoURL,
       });
 
       await setDoc(cartRef, cart);
@@ -153,17 +159,6 @@ export const getUser = createAsyncThunk(
     return onAuthStateChanged(auth, result);
   }
 );
-
-// export const getUser = createAsyncThunk('auth/getUser', () => {
-//   let result;
-//   onAuthStateChanged(auth, user => {
-//     if (user) result = user;
-//     else result = null;
-//   });
-//   setTimeout(() => {
-//     return result;
-//   }, 2000);
-// });
 
 export const resetPassword = createAsyncThunk(
   'auth/resetPassword',
