@@ -1,0 +1,24 @@
+@import '../../styles/variables.scss';
+@import '../../styles/typography.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+  grid-column: 1 / -1;
+
+  @include for-size(tablet-landscape-up) {
+    grid-column: 1 / 5;
+  }
+
+  @include for-size(desktop-up) {
+    grid-column: 1 / 8;
+  }
+
+  & > * + * {
+    margin-top: $gap-32;
+  }
+}
+
+.heading {
+  @include typography('text', '2xl', 'regular');
+  margin-bottom: $gap-32;
+}
