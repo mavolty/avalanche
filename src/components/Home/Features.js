@@ -6,7 +6,7 @@ import secondImageSmall from '../../assets/img/feature-2-small.webp';
 
 function Features() {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} aria-label='Features'>
       <div className={`${styles.feature} ${styles['feature--1']}`}>
         <figure className={styles.media}>
           <img src={firstImage} alt='Girl with beautiful makeup' />
@@ -26,7 +26,10 @@ function Features() {
             element='link'
             theme='primary'
             text='Shop Now'
-            input={{ to: '#' }}
+            input={{
+              to: '/products',
+              'aria-label': 'Shop Now',
+            }}
           />
         </div>
       </div>
@@ -52,7 +55,10 @@ function Features() {
             element='link'
             theme='primary'
             text='Shop Now'
-            input={{ to: '#' }}
+            input={{
+              to: '/products',
+              'aria-label': 'Shop Now',
+            }}
           />
         </div>
       </div>
