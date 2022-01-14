@@ -86,7 +86,7 @@ function Products() {
       const commerceCategories = await commerce.categories.list();
       setProductCategories(commerceCategories);
     } catch (error) {
-      console.log(error);
+      console.log('There is something wrong', error);
     }
 
     setIsCategoriesLoading(false);
@@ -122,6 +122,9 @@ function Products() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     getProducts();
   }, [getProducts]);
 
@@ -149,7 +152,7 @@ function Products() {
               <figure className={styles.headerMedia}>
                 <img
                   src='https://klbtheme.com/cosmetsy/wp-content/uploads/2021/02/index-50.jpg'
-                  alt='Banner'
+                  alt='Products header'
                   className={styles.headerImage}
                 />
               </figure>
