@@ -1,7 +1,7 @@
 import NavbarMobile from './NavbarMobile';
 import NavbarDesktop from './NavbarDesktop';
 import { db } from '../../../services/firebase';
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, onSnapshot } from 'firebase/firestore';
 import { useSelector } from 'react-redux';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -14,10 +14,13 @@ function Navbar({ color }) {
     try {
       if (authStatus) {
         const docRef = doc(db, 'cart', authStatus.uid);
-        const cart = await getDoc(docRef);
-
-        if (cart.exists()) setCart(cart.data());
-        else console.log('No such document!');
+        onSnapshot(docRef, doc => {
+          if (doc.exists()) {
+            setCart(doc.data());
+          } else {
+            console.log('Cart is empty');
+          }
+        });
       }
     } catch (error) {
       console.log('There was an error fetching the cart', error);
