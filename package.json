@@ -2,6 +2,7 @@
   "name": "5-ecommerce",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@chec/commerce.js": "^2.8.0",
     "@headlessui/react": "^1.4.2",

@@ -138,7 +138,7 @@ function Checkout() {
     };
 
     const options = {
-      url: 'http://localhost:8000/checkout',
+      url: '/api/checkout',
       method: 'get',
       params: parameter,
     };

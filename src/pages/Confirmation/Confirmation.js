@@ -24,7 +24,7 @@ function Confirmation() {
           });
 
           const options = {
-            url: 'http://localhost:8000/confirmation',
+            url: '/api/confirmation',
             method: 'get',
             params: {
               order_id: token.id,

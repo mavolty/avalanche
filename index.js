@@ -9,18 +9,14 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, 'build')));
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
-});
-
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: 'http://localhost:8000',
     credentials: true,
   })
 );
 
-app.get('/checkout', (req, res) => {
+app.get('/api/checkout', (req, res) => {
   const options = {
     url: 'https://app.sandbox.midtrans.com/snap/v1/transactions',
     method: 'post',
@@ -29,7 +25,9 @@ app.get('/checkout', (req, res) => {
       Accept: 'application/json',
       Authorization:
         'Basic ' +
-        Buffer.from(process.env.MIDTRANS_SERVER_KEY).toString('base64'),
+        Buffer.from(process.env.REACT_APP_MIDTRANS_SERVER_KEY).toString(
+          'base64'
+        ),
     },
     data: {
       transaction_details: {
@@ -63,7 +61,7 @@ app.get('/checkout', (req, res) => {
   });
 });
 
-app.get('/confirmation', (req, res) => {
+app.get('/api/confirmation', (req, res) => {
   const order_id = req.query.order_id;
 
   const options = {
@@ -81,6 +79,10 @@ app.get('/confirmation', (req, res) => {
   axios(options).then(response => {
     res.json(response.data);
   });
+});
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
 });
 
 app.listen(port, () => console.log('Server started on port ' + port));
