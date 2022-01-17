@@ -21,7 +21,7 @@ function CartFooter({ cart, formInputs }) {
             {cart?.subtotal?.formatted_with_symbol || 0}
           </p>
         </div>
-        {cart.total_unique_items > 0 && (
+        {cart?.total_unique_items > 0 && (
           <Button
             element='link'
             theme='primary'
@@ -32,7 +32,7 @@ function CartFooter({ cart, formInputs }) {
             }}
           />
         )}
-        {cart.total_unique_items === 0 && (
+        {cart?.total_unique_items === 0 && (
           <Button
             element='button'
             theme='primary'
