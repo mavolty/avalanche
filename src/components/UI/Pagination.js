@@ -27,6 +27,7 @@ function Pagination({ postPerPage, totalPosts, currentPage, paginate }) {
         to={`/products/page/${currentPage - 1}`}
         onClick={paginatePrevious}
         className={styles.previous}
+        aria-label='Previous Page'
       >
         <Icon name='arrow' color='gray' direction='left' />
         <p className={styles.previousText}>Previous</p>
@@ -56,6 +57,7 @@ function Pagination({ postPerPage, totalPosts, currentPage, paginate }) {
         to={`/products/page/${currentPage + 1}`}
         onClick={paginateNext}
         className={styles.next}
+        aria-label='Next Page'
       >
         <Icon name='arrow' color='gray' direction='right' />
         <p className={styles.nextText}>Next</p>

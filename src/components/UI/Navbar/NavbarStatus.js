@@ -54,12 +54,12 @@ function NavbarStatus({ color }) {
       {authStatus === null && (
         <ul className={`${styles.container} ${styles[color]}`}>
           <li className={styles.item}>
-            <Link to='/login' className={styles.link}>
-              Login
+            <Link to='/login' aria-label='Masuk' className={styles.link}>
+              Masuk
             </Link>
           </li>
           <li className={styles.item}>
-            <Link to='/register' className={styles.link}>
+            <Link to='/register' aria-label='Daftar' className={styles.link}>
               Daftar
             </Link>
           </li>

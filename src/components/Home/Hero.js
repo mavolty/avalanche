@@ -3,7 +3,7 @@ import image from '../../assets/img/hero.webp';
 
 function Hero() {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} aria-label='Homepage Hero'>
       <figure className={styles.media}>
         <img src={image} alt='Put serum on top of the hand' />
       </figure>

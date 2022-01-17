@@ -111,7 +111,7 @@ function ProductDetail() {
       }
       setIsLoading(false);
     } catch (error) {
-      console.log(error);
+      console.log('There is something wrong', error);
     }
   }, [productId, navigate]);
 
@@ -132,7 +132,7 @@ function ProductDetail() {
       await setDoc(docRef, cart);
       swal('Berhasil', 'Produk berhasil ditambahkan ke keranjang', 'success');
     } catch (error) {
-      console.log(error);
+      console.log('There is something wrong', error);
     }
     setIsAddToCartLoading(false);
   };

@@ -15,28 +15,26 @@ function Footer() {
           </div>
           <ul className={styles.menu}>
             <li className={styles.menuItem}>
-              <Link to='/' className={styles.menuLink}>
+              <Link to='/' aria-label='Home' className={styles.menuLink}>
                 Home
               </Link>
             </li>
             <li className={styles.menuItem}>
-              <Link to='/about-us' className={styles.menuLink}>
+              <Link
+                to='/about-us'
+                aria-label='About Us'
+                className={styles.menuLink}
+              >
                 About
               </Link>
             </li>
             <li className={styles.menuItem}>
-              <Link to='/services' className={styles.menuLink}>
-                Services
-              </Link>
-            </li>
-            <li className={styles.menuItem}>
-              <Link to='/portfolio' className={styles.menuLink}>
-                Portfolio
-              </Link>
-            </li>
-            <li className={styles.menuItem}>
-              <Link to='/contact' className={styles.menuLink}>
-                Contact
+              <Link
+                to='/products'
+                aria-label='Shop'
+                className={styles.menuLink}
+              >
+                Shop
               </Link>
             </li>
           </ul>
@@ -47,27 +45,47 @@ function Footer() {
               Face
               <ul className={styles.categoryList}>
                 <li className={styles.categoryItem}>
-                  <Link to='/face/face-care' className={styles.categoryLink}>
+                  <Link
+                    to='/face/face-care'
+                    aria-label='Face Care'
+                    className={styles.categoryLink}
+                  >
                     Face Care
                   </Link>
                 </li>
                 <li className={styles.categoryItem}>
-                  <Link to='/face/face-mask' className={styles.categoryLink}>
+                  <Link
+                    to='/face/face-mask'
+                    aria-label='Face Mask'
+                    className={styles.categoryLink}
+                  >
                     Face Mask
                   </Link>
                 </li>
                 <li className={styles.categoryItem}>
-                  <Link to='/face/face-wash' className={styles.categoryLink}>
+                  <Link
+                    to='/face/face-wash'
+                    aria-label='Face Wash'
+                    className={styles.categoryLink}
+                  >
                     Face Wash
                   </Link>
                 </li>
                 <li className={styles.categoryItem}>
-                  <Link to='/face/face-serum' className={styles.categoryLink}>
+                  <Link
+                    to='/face/face-serum'
+                    aria-label='Face Serum'
+                    className={styles.categoryLink}
+                  >
                     Face Serum
                   </Link>
                 </li>
                 <li className={styles.categoryItem}>
-                  <Link to='/face/face-cream' className={styles.categoryLink}>
+                  <Link
+                    to='/face/face-cream'
+                    aria-label='Face Cream'
+                    className={styles.categoryLink}
+                  >
                     Face Cream
                   </Link>
                 </li>
@@ -79,27 +97,47 @@ function Footer() {
               Hair
               <ul className={styles.categoryList}>
                 <li className={styles.categoryItem}>
-                  <Link to='/hair/hair-care' className={styles.categoryLink}>
+                  <Link
+                    to='/hair/hair-care'
+                    aria-label='Hair Care'
+                    className={styles.categoryLink}
+                  >
                     Hair Care
                   </Link>
                 </li>
                 <li className={styles.categoryItem}>
-                  <Link to='/hair/hair-mask' className={styles.categoryLink}>
+                  <Link
+                    to='/hair/hair-mask'
+                    aria-label='Hair Mask'
+                    className={styles.categoryLink}
+                  >
                     Hair Mask
                   </Link>
                 </li>
                 <li className={styles.categoryItem}>
-                  <Link to='/hair/hair-wash' className={styles.categoryLink}>
+                  <Link
+                    to='/hair/hair-wash'
+                    aria-label='Hair Wash'
+                    className={styles.categoryLink}
+                  >
                     Hair Wash
                   </Link>
                 </li>
                 <li className={styles.categoryItem}>
-                  <Link to='/hair/hair-serum' className={styles.categoryLink}>
+                  <Link
+                    to='/hair/hair-serum'
+                    aria-label='Hair Serum'
+                    className={styles.categoryLink}
+                  >
                     Hair Serum
                   </Link>
                 </li>
                 <li className={styles.categoryItem}>
-                  <Link to='/hair/hair-cream' className={styles.categoryLink}>
+                  <Link
+                    to='/hair/hair-cream'
+                    aria-label='Hair Cream'
+                    className={styles.categoryLink}
+                  >
                     Hair Cream
                   </Link>
                 </li>
@@ -111,27 +149,47 @@ function Footer() {
               Lip
               <ul className={styles.categoryList}>
                 <li className={styles.categoryItem}>
-                  <Link to='/lip/lip-care' className={styles.categoryLink}>
+                  <Link
+                    to='/lip/lip-care'
+                    aria-label='Lip Care'
+                    className={styles.categoryLink}
+                  >
                     Lip Care
                   </Link>
                 </li>
                 <li className={styles.categoryItem}>
-                  <Link to='/lip/lip-mask' className={styles.categoryLink}>
+                  <Link
+                    to='/lip/lip-mask'
+                    aria-label='Lip Mask'
+                    className={styles.categoryLink}
+                  >
                     Lip Mask
                   </Link>
                 </li>
                 <li className={styles.categoryItem}>
-                  <Link to='/lip/lip-wash' className={styles.categoryLink}>
+                  <Link
+                    to='/lip/lip-wash'
+                    aria-label='Lip Wash'
+                    className={styles.categoryLink}
+                  >
                     Lip Wash
                   </Link>
                 </li>
                 <li className={styles.categoryItem}>
-                  <Link to='/lip/lip-serum' className={styles.categoryLink}>
+                  <Link
+                    to='/lip/lip-serum'
+                    aria-label='Lip Serum'
+                    className={styles.categoryLink}
+                  >
                     Lip Serum
                   </Link>
                 </li>
                 <li className={styles.categoryItem}>
-                  <Link to='/lip/lip-cream' className={styles.categoryLink}>
+                  <Link
+                    to='/lip/lip-cream'
+                    aria-label='Lip Cream'
+                    className={styles.categoryLink}
+                  >
                     Lip Cream
                   </Link>
                 </li>
@@ -146,23 +204,26 @@ function Footer() {
         </div>
         <div className={styles.social}>
           <a
-            href='https://www.facebook.com/cosmetsy'
+            href='https://www.facebook.com/avalanche'
             target='_blank'
             rel='noopener noreferrer'
+            aria-label='Facebook'
           >
             {/* <Icon name="facebook" color="white" /> */}
           </a>
           <a
-            href='https://www.instagram.com/cosmetsy'
+            href='https://www.instagram.com/avalanche'
             target='_blank'
             rel='noopener noreferrer'
+            aria-label='Instagram'
           >
             {/* <Icon name="instagram" color="white" /> */}
           </a>
           <a
-            href='https://www.pinterest.com/cosmetsy/'
+            href='https://www.pinterest.com/avalanche'
             target='_blank'
             rel='noopener noreferrer'
+            aria-label='Pinterest'
           >
             {/* <Icon name="pinterest" color="white" /> */}
           </a>

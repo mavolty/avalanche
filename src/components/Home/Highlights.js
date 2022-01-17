@@ -4,7 +4,7 @@ import secondImage from '../../assets/img/highlight-2.webp';
 
 function Highlights() {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} aria-label='Highlights'>
       <div className={`${styles.highlight} ${styles['highlight--1']}`}>
         <div className={styles.content}>
           <h2 className={styles.title}>

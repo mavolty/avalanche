@@ -84,7 +84,7 @@ function NavbarMobile({ color, cart }) {
         </div>
         <h1 className={`${styles.brand} ${styles[color]}`}>Avalanche</h1>
         <div className={styles.cart}>
-          <Link to='/cart' className={styles.link}>
+          <Link to='/cart' aria-label='Cart' className={styles.link}>
             <Icon name='cart' color={color} />
             <p className={`${styles.amount} ${styles[color]}`}>
               ({cart?.total_items || 0})
@@ -102,6 +102,7 @@ function NavbarMobile({ color, cart }) {
                 text='Masuk'
                 input={{
                   to: '/login',
+                  'aria-label': 'Masuk',
                 }}
               />
               <Button
@@ -110,6 +111,7 @@ function NavbarMobile({ color, cart }) {
                 text='Daftar'
                 input={{
                   to: '/register',
+                  'aria-label': 'Daftar',
                 }}
               />
             </>
@@ -126,7 +128,7 @@ function NavbarMobile({ color, cart }) {
           {authStatus === undefined && <AccountSkeleton />}
         </div>
         <div className={styles.activity}>
-          <h4 className={styles.activityTitle}>Aktivitas Saya</h4>
+          <h2 className={styles.activityTitle}>Aktivitas Saya</h2>
           <div className={styles.activityList}>
             {activityList.map(act => (
               <Button
@@ -136,6 +138,7 @@ function NavbarMobile({ color, cart }) {
                 text={act.text}
                 input={{
                   to: act.link,
+                  'aria-label': act.text,
                 }}
                 icon={<Icon name={act.icon} color='primary' />}
               />
@@ -143,7 +146,7 @@ function NavbarMobile({ color, cart }) {
           </div>
         </div>
         <div className={styles.category}>
-          <h4 className={styles.categoryTitle}>Semua kategori</h4>
+          <h2 className={styles.categoryTitle}>Semua kategori</h2>
           <div className={styles.categoryList}>
             {categoryList.map(cat => (
               <Button
@@ -153,6 +156,7 @@ function NavbarMobile({ color, cart }) {
                 text={cat.text}
                 input={{
                   to: cat.link,
+                  'aria-label': cat.text,
                 }}
               />
             ))}

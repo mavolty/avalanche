@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
 
 function AllProducts({ products, isLoading }) {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} aria-label='All Products'>
       <div className={styles.row}>
         <h2 className={styles.title}>
           As usual, Cosmetsy dedicates all four Advent Sundays to abundant
@@ -33,6 +33,7 @@ function AllProducts({ products, isLoading }) {
           text='View All Products'
           input={{
             to: '/products',
+            'aria-label': 'View All Products',
           }}
           icon={<Arrow direction='right' />}
         />
@@ -47,8 +48,12 @@ function AllProducts({ products, isLoading }) {
       >
         {products.map(product => (
           <SwiperSlide key={product.id} className={styles.productSlide}>
+            {!isLoading && (
+              <ul>
+                <ProductItem {...product} />
+              </ul>
+            )}
             {isLoading && <ProductItemSkeleton />}
-            {!isLoading && <ProductItem {...product} />}
           </SwiperSlide>
         ))}
       </Swiper>

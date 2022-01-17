@@ -1,9 +1,10 @@
 import styles from './Dropdown.module.scss';
+import { Link } from 'react-router-dom';
 import { Menu } from '@headlessui/react';
 
 function Dropdown({ button, items, account }) {
   return (
-    <Menu as="div" className={styles.container}>
+    <Menu as='div' className={styles.container}>
       {({ open }) => (
         <>
           <Menu.Button className={styles.button}>
@@ -21,20 +22,20 @@ function Dropdown({ button, items, account }) {
                   </div>
                 </div>
               )}
-              <Menu.Items as="ul" static className={styles.items}>
+              <Menu.Items as='ul' static className={styles.items}>
                 {items.map(item => (
-                  <Menu.Item as="li" key={item.text}>
+                  <Menu.Item as='li' key={item.text}>
                     {({ active }) => {
                       if (item.element === 'link')
                         return (
-                          <a
+                          <Link
+                            to={item.target}
                             className={`${active ? styles.itemActive : ''} ${
                               styles.item
                             }`}
-                            href={item.target}
                           >
                             {item.text}
-                          </a>
+                          </Link>
                         );
 
                       if (item.element === 'button')
