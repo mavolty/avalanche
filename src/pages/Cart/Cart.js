@@ -8,29 +8,10 @@ import { useSelector } from 'react-redux';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { useState, useEffect, useCallback } from 'react';
 
-const initialItems = [];
-
-for (let i = 0; i < 10; i++) {
-  initialItems.push({
-    id: i,
-    name: '',
-    price: {
-      formatted_with_symbol: '',
-    },
-    image: {
-      url: '',
-    },
-    line_total: '',
-  });
-}
-
 function Cart() {
   const authSelector = useSelector(state => state.auth);
   const { authStatus } = authSelector;
-  const [cart, setCart] = useState({
-    line_items: initialItems,
-    total_unique_items: 0,
-  });
+  const [cart, setCart] = useState(null);
   const [itemTemp, setItemTemp] = useState({
     id: '',
     quantity: 1,
